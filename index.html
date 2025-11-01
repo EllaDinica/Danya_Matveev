@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>Danya_Matveev</title>
+    <style>
+        body{
+            background-color: #b3b3b3;
+            color: #cc001f;
+            text-align: center;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Garamond, serif;
+        }
+
+        #container{
+            font-size: 400%;
+        }
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+
+    <script>
+        let verse = [
+            "Я хотів лиш твоєї любові",
+            "До біса всіх - мені інші не в змозі",
+            "Зламаний я, і світ мій зруйновано",
+            "Вибір простий: здаюсь і піду мовчки знову",
+            "Я хотів лиш тебе одну",
+            "Бачиш - шрами на цій шкірі грубій?",
+            "Різав роками вперто й любо",
+            "Твоє ім'я.. Тепер - піду",
+            "Знаєш, чого тепер я прагну?",
+            "Щоб у чорних твоїх віях, ясних",
+            "Щастя іскрилось завжди, прекрасне",
+            "Без тебе зможу. Повір, кохана",
+            "Клоун.."
+        ];
+
+        let content = document.getElementById("container");
+        let index = 0;
+        function danyaVerse(){
+            $("#container").fadeOut(3000, function(){
+                $(this).text(verse[index]).fadeIn(3000);
+                index = (index + 1) % verse.length;
+            });
+        };
+
+        setInterval(danyaVerse, 6000);
+        danyaVerse();
+    </script>
+</body>
+</html>
